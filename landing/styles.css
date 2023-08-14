@@ -135,3 +135,51 @@ form h4{
 #section-home >div:first-child {
     margin-right: 10px;
 }
+
+#container2 h2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+    color: #6262a0;
+    font-size: 30px;
+    text-align: center;
+    align-items: center;
+}
+
+ #row {
+    
+    display: flex;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    margin-right: 100px;
+    margin-left: 100px;
+    border: 20px;
+    color: #6262a0;
+    font-size: 22px;
+    justify-content:center; 
+}
+
+.second-section{
+    align-items: center;
+    padding: 20px;
+    text-align: center; 
+}
+
+.second-section img {
+    
+    width:70;
+    height: 70px;
+}
+
+#feature2 {
+    border: 20px;
+    color: #6262a0;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    margin-right: 100px;
+    margin-left: 100px;
+
+}
+
