@@ -143,26 +143,23 @@ form h4{
     padding: 0;
     margin: 0;
     color: #6262a0;
-    font-size: 30px;
+    font-size: 40px;
     text-align: center;
     align-items: center;
 }
 
  #row {
-    
+
     display: flex;
-    padding-top: 100px;
-    padding-bottom: 100px;
-    margin-right: 100px;
-    margin-left: 100px;
-    border: 20px;
+    padding: 100px;
+    /*border: 20px;*/
     color: #6262a0;
     font-size: 22px;
-    justify-content:center; 
+    /*justify-content:space-between;*/ 
 }
 
 .second-section{
-    align-items: center;
+    /*align-items: right;*/
     padding: 20px;
     text-align: center; 
 }
