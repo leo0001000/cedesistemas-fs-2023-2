@@ -1,12 +1,22 @@
 import styled from 'styled-components'
+import { COLORS } from '../../globalStyles'
 
 export const TopbarContainer = styled.header`
 position: fixed;
+text-align: center;
 width: 100%;
 height: 60px;
-border: 1px solid red;
 top: 0;
 left: 0;
-background-color: blue
+background-color: ${COLORS.primary};
+
+h5 {
+  color: #fff;
+    text-align: center;
+    font-size: 1.2em;
+    line-height: 0;
+}
+
+
 `
 

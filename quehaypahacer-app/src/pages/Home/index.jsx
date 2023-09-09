@@ -1,14 +1,15 @@
 
+import { Layout } from "../../components/Layout/index"
 import { Topbar } from "../../components/Topbar/index"
 import { Categories } from "./components/Categories/index"
+import { TopEvents } from "./components/TopEvents/"
 
 export const Home = () => {
 
   return(
-    <>
-      <Topbar />
-      <h2>Home page</h2>
+    <Layout>
       <Categories />
-    </>
+      <TopEvents />
+    </Layout>
   )
 }

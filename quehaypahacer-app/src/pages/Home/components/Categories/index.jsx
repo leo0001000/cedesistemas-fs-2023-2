@@ -5,25 +5,30 @@ import {IoMusicalNotes, IoColorPaletteOutline, IoFastFood, IoLaptopOutline} from
 const CategoriesContainer = styled.section`
   display: flex;
   margin: 0 15px;
+  justify-content: center;
 
 `
 const CATEGORY_LIST = [
   {
+    id:1,
     name: 'Art',
     icon: <IoColorPaletteOutline/>,
     color: 'orange'
   },
   {
+    id: 2,
     name: 'Gastronómico',
     icon: <IoFastFood/>,
     color: 'red'
   },
   {
+    id:3,
     name: 'Música',
     icon: <IoMusicalNotes/>,
     color: 'black'
   },
   {
+    id:4,
     name: 'Geek',
     icon: <IoLaptopOutline/>,
     color: 'blue'

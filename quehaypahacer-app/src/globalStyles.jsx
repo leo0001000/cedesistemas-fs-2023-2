@@ -16,3 +16,21 @@ export const GlobalStyles = createGlobalStyle`
     font-family: 'Poppins';
   }
 `
+export const Button = styled.button` //button lo reconoce cuando lo importamos en el index//
+  width: 100%;
+  border: none;
+  color: white; //Color de fuente
+  //background-color: ${COLORS.secondary};
+  background-color: ${props => props.color || COLORS.primary}; //Para cuando me llegen otros botones con o sin color dar un default
+  font-size: 1em;
+  padding:12px 0px;
+  text-align: center;
+  cursor: pointer;
+  opacity: 0.9;
+  text-transform: uppercase;
+  font-weight: 700;
+
+  &:hover{
+    opacity: 1;
+  }
+`
