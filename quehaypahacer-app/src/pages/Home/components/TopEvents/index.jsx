@@ -1,5 +1,6 @@
 import { styled } from "styled-components"
 import { COLORS } from "../../../../globalStyles"
+import {Link } from 'react-router-dom'
 
 const TopEventsContainer = styled.section`
   margin: 25px 0;
@@ -69,9 +70,11 @@ const EventContent = styled.div` //Darle estulo al contenido del evento //
     line-height: 1.2em;
     margin: 10px 0;
     font-size: 1.2em;
+    color: #222;
     }
   p{
     margin: 0;
+    color: #222;
   }
 `
 
@@ -85,18 +88,20 @@ const FreeText = styled.p`
 
 //each event component Para usar el props de abajo tengo que meterlo dentro del paréntesis para que me traiga las props//
 const Event = (props) => ( //Retorno puede ser implícito() y no uso palabra retorno o explícito{} y uso palabra return//
-  <EventWrapper>
-      <img src={props.image} width="200px" />
-    <EventContent> {/*Lo traigo del const EventContent que cree para darle los estilos*/}
-      <h5> {props.title}</h5>
-      <p>{props.date}</p>
-      <p>{props.location}</p>
-      {
-      //Para verificar si es gratuito  o no el evento//
-        props.is_free ? <FreeText>Gratuito</FreeText> : <p> COP$ {props.price}</p> //Ternario//
-      }
-    </EventContent>
-  </EventWrapper>
+  <Link to={ `/detail/${props.id}` }>
+    <EventWrapper>
+        <img src={props.image} width="200px" />
+      <EventContent> {/*Lo traigo del const EventContent que cree para darle los estilos*/}
+        <h5> {props.title}</h5>
+        <p>{props.date}</p>
+        <p>{props.location}</p>
+        {
+        //Para verificar si es gratuito  o no el evento//
+          props.is_free ? <FreeText>Gratuito</FreeText> : <p> COP$ {props.price}</p> //Ternario//
+        }
+      </EventContent>
+    </EventWrapper>
+  </Link>
 )
 
 export const TopEvents = () => {
