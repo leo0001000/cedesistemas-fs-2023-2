@@ -1,5 +1,5 @@
+import {styled} from 'styled-components'
 import { Topbar } from '../Topbar'
-import { styled } from 'styled-components'
 
 const ContentLayout = styled.section`
   margin-top: 60px; //Para que la pagina incie 60px debajo, es decir por debajo del topbar

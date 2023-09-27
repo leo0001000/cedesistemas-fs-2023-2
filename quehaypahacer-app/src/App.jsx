@@ -2,7 +2,10 @@
 import { GlobalStyles } from "./globalStyles"
 import { Home } from "./pages/Home"
 import { EventDetail } from "./pages/EventDetail"
-import { createBrowserRouter, RouterProvider } from '../node_modules/react-router-dom/dist/index'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { Profile } from "./pages/Profiles"
+import { Confirmation } from "./pages/Confirmation"
+import { Login } from './pages/Login'
 
 
 const router = createBrowserRouter ([ //[Significa la apertura de un arreglo
@@ -15,10 +18,17 @@ const router = createBrowserRouter ([ //[Significa la apertura de un arreglo
     element: <EventDetail/>
   },
   {
-    path: '/detail/:id', //Se pone id para identificar el evento que quiero mostrar//
-    element: <EventDetail/>
+    path: '/profile', //Para que se enlace con el perfil de usuario
+    element: <Profile/>
+  },
+  {
+    path: '/confirmation', //Para que se enlace con el perfil de usuario
+    element: <Confirmation/>
+  },
+  {
+    path: '/login', //Para que se enlace con el perfil de usuario
+    element: <Login/>
   }
-
 ])
 
 

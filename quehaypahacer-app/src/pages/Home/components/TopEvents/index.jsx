@@ -1,9 +1,44 @@
 import { styled } from "styled-components"
 import { COLORS } from "../../../../globalStyles"
-import {Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const TopEventsContainer = styled.section`
   margin: 25px 0;
+`
+const EventWrapper = styled.div`
+  border: 3px solid #ccc;
+  border-radius: 10px;
+  display: flex;
+  margin: 10px 0;
+  overflow: hidden;
+  background-color: #ccc;
+
+  &:hover {
+    background-color: #fff;
+    cursor: pointer;
+  }
+`
+
+const EventContent = styled.div`
+  margin-left: 15px;
+  h5 {
+    font-size: 1.2em;
+    line-height: 1.2em;
+    margin: 10px 0;
+    color: #222;
+  }
+  p {
+    margin: 0;
+    color: #222;
+  }
+`;
+
+const FreeText = styled.p`
+  background-color: ${COLORS.info};
+  color: ${COLORS.primary};
+  padding: 3px 4px;
+  border-radius: 3px;
+  display: inline;
 `
 
 //De donde se traen los datos de los eventos BASE_DE_DATOS//
@@ -50,41 +85,6 @@ const EVENTS_DATA = [
   }
 ]
 
-
-const EventWrapper = styled.div` //Dar estilos al envoltorio de los eventos//
-  border: 3px solid #ccc;
-  border-radius: 10px;
-  margin: 10px 0;
-  display: flex;
-  overflow: hidden; //para que la imagen no pase por encima del borde sino que esté por debajo//
-
-  &:hover{
-    background-color: #dfd0d0;
-    cursor: pointer;
-  }
-`
-
-const EventContent = styled.div` //Darle estulo al contenido del evento //
-  margin-left: 15px;
-  h5{
-    line-height: 1.2em;
-    margin: 10px 0;
-    font-size: 1.2em;
-    color: #222;
-    }
-  p{
-    margin: 0;
-    color: #222;
-  }
-`
-
-const FreeText = styled.p`
-  background-color: ${COLORS.info};
-  color: white;
-  padding: 3px 4px;
-  border-radius: 3px;
-  display: inline;
-`
 
 //each event component Para usar el props de abajo tengo que meterlo dentro del paréntesis para que me traiga las props//
 const Event = (props) => ( //Retorno puede ser implícito() y no uso palabra retorno o explícito{} y uso palabra return//
