@@ -70,4 +70,9 @@ export const FormControl = styled.div`
   label {
     font-size: ${props => props.fontSize || "1.0em"}; //atributo modificable fuente
   }
+  span {
+    font-size: 0.7em;
+    color: ${COLORS.error}
+
+  }
 `
