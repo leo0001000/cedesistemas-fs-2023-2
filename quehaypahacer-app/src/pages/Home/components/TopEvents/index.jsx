@@ -1,6 +1,8 @@
 import { styled } from "styled-components"
 import { COLORS } from "../../../../globalStyles"
 import { Link } from 'react-router-dom'
+import { useContext, useEffect, useState } from "react"
+import { CategoryContext } from "../../../../contents/CategoryContext"
 
 const TopEventsContainer = styled.section`
   margin: 25px 0;
@@ -106,12 +108,26 @@ const Event = (props) => ( //Retorno puede ser implícito() y no uso palabra ret
 
 export const TopEvents = () => {
 
+  const { categoryState} = useContext(CategoryContext)
+  const [events, setEvents] = useState(EVENTS_DATA)
+
+  useEffect(() => {
+
+   if (categoryState.categorySelected !== 0) {
+    const eventsFilter = EVENTS_DATA.filter(item => item.category === categoryState.categorySelected
+      )
+    setEvents (eventsFilter)
+   }else{
+    setEvents (EVENTS_DATA)
+   }
+  }, [categoryState])
+
   return (
     <TopEventsContainer>
-      <h3>Eventos Cercanos</h3>
+      <h3>Eventos Cercanos {categoryState.categorySelected}</h3>
       <section>
         {
-          EVENTS_DATA.map(item => <Event {...item} />) //Recorremos el arreglo y se renderiza//
+          events.map(item => <Event {...item} />) //Recorremos el arreglo y se renderiza//
           //Script Operator = (...) coge un objeto y lo separa entre sus atributos//
         }
       </section>

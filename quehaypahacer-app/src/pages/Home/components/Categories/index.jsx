@@ -37,16 +37,11 @@ const CATEGORY_LIST = [
   },
 ]
 
-//const ALL_CATEGORIES = 0
 
 export const Categories = () => {
-
   const {categoryState, onChangeCategory: onChangeCategoryContext} = useContext(CategoryContext)
 
-  //const [categorySelected, setCategorySelected] = useState (ALL_CATEGORIES)
-
   const onChangeCategory = (newCategoryId) => {
-    //setCategorySelected(categorySelected === newCategoryId ? ALL_CATEGORIES : newCategoryId)
     onChangeCategoryContext(newCategoryId)
   }
 
