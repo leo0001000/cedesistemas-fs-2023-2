@@ -2,7 +2,7 @@ import { styled } from "styled-components"
 import { Category } from "../Category"
 import { IoMusicalNotes, IoColorPalette, IoFastFood, IoLaptop } from 'react-icons/io5'
 import { useState, useContext } from "react"
-import { CategoryContext } from "../../../../contents/CategoryContext"
+import { CategoryContext } from "../../../../context/CategoryContext"
 
 const CategoriesContainer = styled.section`
   display: flex;
@@ -50,7 +50,8 @@ export const Categories = () => {
     <CategoriesContainer>
 
       {
-        CATEGORY_LIST.map(item => <Category
+        CATEGORY_LIST.map((item, key) => <Category
+          key={key}
           isActive={categoryState.categorySelected === item.id}
           {...item}
           onChangeCategory={onChangeCategory}

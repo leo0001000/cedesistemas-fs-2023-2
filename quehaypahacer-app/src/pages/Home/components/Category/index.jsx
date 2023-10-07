@@ -45,7 +45,7 @@ export const Category = (props) => { //Función donde Se reciben propiedades//
   return (
     <CategoryWrapper isActive={props.isActive} onClick={categorySelection}>
       <IconWrapper>{props.icon}</IconWrapper>
-      <p>{props.name} { props.isActive ? 'T' : 'F'}</p>
+      <p>{props.name} </p>
     </CategoryWrapper>
   )
 }

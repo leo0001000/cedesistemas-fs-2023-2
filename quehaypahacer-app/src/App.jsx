@@ -6,7 +6,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { Profile } from "./pages/Profiles"
 import { Confirmation } from "./pages/Confirmation"
 import { Login } from './pages/Login'
-
+import { SignUp } from './pages/SignUp'
+import { UserContextStore } from "./context/UserContext"
 
 const router = createBrowserRouter ([ //[Significa la apertura de un arreglo
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter ([ //[Significa la apertura de un arreglo
   {
     path: '/login', //Para que se enlace con el perfil de usuario
     element: <Login/>
+  },
+  {
+  path: '/signup', //Para que se enlace con el perfil de usuario
+  element: <SignUp/>
   }
 ])
 
@@ -37,7 +42,9 @@ export const App = () => { //export para que sea pública la función//
     return (
       <>
         <GlobalStyles />
-        <RouterProvider router={router}/>
+        <UserContextStore>
+          <RouterProvider router={router}/>
+        </UserContextStore>
       </>
     )
 }
